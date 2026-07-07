@@ -14,3 +14,5 @@ jobs:
           sudo apt-get install -y iverilog
       - name: alu
         run: make MOD=alu
+      - name: regfile
+        run: make MOD=regfile
