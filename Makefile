@@ -27,6 +27,8 @@ wave:
 
 formal:
 	@test -n "$(MOD)" || { echo "usage: make formal MOD=<module>  (e.g. MOD=alu)"; exit 1; }
+	@mkdir -p build
+	sv2v -E Assert $(RTL) formal/$(MOD)_formal.sv > build/$(MOD)_formal.v
 	sby -f $(FORMAL)
 
 view:
