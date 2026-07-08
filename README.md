@@ -12,6 +12,13 @@ The ALU is verified with a self-checking testbench and an exhaustive SymbiYosys 
 
 ![Register file block diagram](docs/regfile_block.svg)
 
+## Parameters
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `XLEN` | `32` | Data width (ALU and regfile) |
+| `AWIDTH` | `5` | Address width (regfile: 32 entries) |
+
 ## Interface
 
 ### `alu`
@@ -39,13 +46,6 @@ The ALU is verified with a self-checking testbench and an exhaustive SymbiYosys 
 | `raddr2` | in | `AWIDTH` | Read address 2 |
 | `rdata1` | out | `XLEN` | Read data 1 |
 | `rdata2` | out | `XLEN` | Read data 2 |
-
-## Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `XLEN` | `32` | Data width (ALU and regfile) |
-| `AWIDTH` | `5` | Address width (regfile: 32 entries) |
 
 ## Operations
 
