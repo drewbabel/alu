@@ -12,7 +12,7 @@ module alu_wave_tb;
   localparam int XLEN = 32;
 
   logic [XLEN-1:0] a, b;
-  alu_op_e alu_op;
+  alu_pkg::alu_op_e alu_op;
   logic [XLEN-1:0] result;
   logic zero, lt, ltu;
 
@@ -22,7 +22,8 @@ module alu_wave_tb;
   );
 
   integer f;
-  task automatic step(input alu_op_e op, input logic [XLEN-1:0] av, bv);
+  task automatic step(input alu_pkg::alu_op_e op,
+                      input logic [XLEN-1:0] av, input logic [XLEN-1:0] bv);
     a = av; b = bv; alu_op = op;
     #5;  // let the combinational logic settle
     $fwrite(f, "%0d,%0d,%0d,%0d,%0d,%0d,%0d\n",
