@@ -1,0 +1,83 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="regfile" id="regfile">
+    <mxGraphModel grid="0" gridSize="10" pageWidth="1000" pageHeight="640" background="#ffffff">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Outer boundary -->
+        <mxCell id="outer" value="" vertex="1" parent="1"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;"><mxGeometry x="200" y="90" width="620" height="470" as="geometry"/></mxCell>
+        <mxCell id="outer-lbl" value="regfile" vertex="1" parent="1"
+          style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="206" y="64" width="150" height="22" as="geometry"/></mxCell>
+
+        <!-- Register array -->
+        <mxCell id="mem" value="register array&#10;32 &#215; XLEN&#10;(x0 hardwired 0)" vertex="1" parent="1"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f2f2f2;strokeColor=#000000;strokeWidth=1.5;align=center;verticalAlign=middle;fontSize=16;"><mxGeometry x="330" y="180" width="190" height="220" as="geometry"/></mxCell>
+
+        <!-- Read-port muxes -->
+        <mxCell id="rmux1" value="read port 1&#10;(x0 &#8594; 0)" vertex="1" parent="1"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f2f2f2;strokeColor=#000000;strokeWidth=1.5;align=center;verticalAlign=middle;fontSize=16;"><mxGeometry x="650" y="200" width="150" height="80" as="geometry"/></mxCell>
+        <mxCell id="rmux2" value="read port 2&#10;(x0 &#8594; 0)" vertex="1" parent="1"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f2f2f2;strokeColor=#000000;strokeWidth=1.5;align=center;verticalAlign=middle;fontSize=16;"><mxGeometry x="650" y="330" width="150" height="80" as="geometry"/></mxCell>
+
+        <!-- I/O labels: left inputs -->
+        <mxCell id="io-we"     value="we"     vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="108" y="179" width="32" height="22" as="geometry"/></mxCell>
+        <mxCell id="io-waddr"  value="waddr"  vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="82" y="229" width="58" height="22" as="geometry"/></mxCell>
+        <mxCell id="io-wdata"  value="wdata"  vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="82" y="279" width="58" height="22" as="geometry"/></mxCell>
+        <mxCell id="io-clk"    value="clk"    vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="100" y="329" width="40" height="22" as="geometry"/></mxCell>
+        <mxCell id="io-rstn"   value="rst_n"  vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="88" y="379" width="52" height="22" as="geometry"/></mxCell>
+        <mxCell id="io-raddr1" value="raddr1" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="80" y="449" width="60" height="22" as="geometry"/></mxCell>
+        <mxCell id="io-raddr2" value="raddr2" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="80" y="499" width="60" height="22" as="geometry"/></mxCell>
+
+        <!-- I/O labels: right outputs -->
+        <mxCell id="io-rdata1" value="rdata1" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="890" y="229" width="66" height="22" as="geometry"/></mxCell>
+        <mxCell id="io-rdata2" value="rdata2" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fillColor=none;strokeColor=none;"><mxGeometry x="890" y="359" width="66" height="22" as="geometry"/></mxCell>
+
+        <!-- Left inputs straight into the register array (label order matches port order: no crossings) -->
+        <mxCell id="e-we" edge="1" parent="1" source="io-we" target="mem"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.045;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-waddr" edge="1" parent="1" source="io-waddr" target="mem"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.273;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-wdata" edge="1" parent="1" source="io-wdata" target="mem"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-clk" edge="1" parent="1" source="io-clk" target="mem"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.727;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-rstn" edge="1" parent="1" source="io-rstn" target="mem"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.955;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Register array feeds each read port (straight, in the array-to-port gap) -->
+        <mxCell id="e-m-r1" edge="1" parent="1" source="mem" target="rmux1"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.218;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-m-r2" edge="1" parent="1" source="mem" target="rmux2"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.809;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Read ports to outputs -->
+        <mxCell id="e-rdata1" edge="1" parent="1" source="rmux1" target="io-rdata1"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-rdata2" edge="1" parent="1" source="rmux2" target="io-rdata2"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Read addresses along the bottom, up into each port's lower-left (raddr1 hops the port-2 data line) -->
+        <mxCell id="e-raddr1" edge="1" parent="1" source="io-raddr1" target="rmux1"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="563" y="460"/><mxPoint x="563" y="260"/></Array></mxGeometry></mxCell>
+        <mxCell id="e-raddr2" edge="1" parent="1" source="io-raddr2" target="rmux2"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="607" y="510"/><mxPoint x="607" y="390"/></Array></mxGeometry></mxCell>
+
+        <!-- Bus-width ticks (XLEN) on wdata, rdata1, rdata2 -->
+        <mxCell id="bus-wdata" edge="1" parent="1"
+          style="endArrow=none;startArrow=none;html=1;strokeColor=#000000;strokeWidth=1.5;"><mxGeometry relative="1" as="geometry"><mxPoint x="163" y="299" as="sourcePoint"/><mxPoint x="177" y="281" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="busw-wdata" value="XLEN" vertex="1" parent="1"
+          style="text;html=1;align=center;fontStyle=2;fontSize=13;fillColor=none;strokeColor=none;"><mxGeometry x="140" y="258" width="60" height="18" as="geometry"/></mxCell>
+        <mxCell id="bus-rd1" edge="1" parent="1"
+          style="endArrow=none;startArrow=none;html=1;strokeColor=#000000;strokeWidth=1.5;"><mxGeometry relative="1" as="geometry"><mxPoint x="848" y="249" as="sourcePoint"/><mxPoint x="862" y="231" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="busw-rd1" value="XLEN" vertex="1" parent="1"
+          style="text;html=1;align=center;fontStyle=2;fontSize=13;fillColor=none;strokeColor=none;"><mxGeometry x="825" y="208" width="60" height="18" as="geometry"/></mxCell>
+        <mxCell id="bus-rd2" edge="1" parent="1"
+          style="endArrow=none;startArrow=none;html=1;strokeColor=#000000;strokeWidth=1.5;"><mxGeometry relative="1" as="geometry"><mxPoint x="848" y="379" as="sourcePoint"/><mxPoint x="862" y="361" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="busw-rd2" value="XLEN" vertex="1" parent="1"
+          style="text;html=1;align=center;fontStyle=2;fontSize=13;fillColor=none;strokeColor=none;"><mxGeometry x="825" y="338" width="60" height="18" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
