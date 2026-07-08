@@ -67,6 +67,8 @@ The ALU is verified with a self-checking testbench and an exhaustive SymbiYosys 
 | `alu` | Self-checking testbench and SymbiYosys formal proof |
 | `regfile` | Self-checking testbench |
 
+Since the ALU is combinational, a single-step bounded proof checking every output against a reference model is exhaustive over all operand pairs and operations, certifying `result`, `zero`, `lt`, and `ltu` for the entire input space.
+
 ## Results
 
 ![ALU waveform](docs/alu_waveform.svg)
