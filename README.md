@@ -1,5 +1,7 @@
 # alu
 
+[![CI](https://github.com/drewbabel/alu/actions/workflows/ci.yml/badge.svg)](https://github.com/drewbabel/alu/actions/workflows/ci.yml)
+
 A configurable arithmetic and logic unit written in SystemVerilog.
 
 The ALU implements a subset of RV32I operations (add, subtract, logical, and shift instructions) combinationally from two input operands and an operation select signal. It computes the result, zero flag, and signed/unsigned less-than flags required for branch instructions. A register file provides a dual-port synchronous SRAM with read ports and masked write support. Shared RV32I types, such as the operation enum, live in `alu_pkg`, which is intended to grow into a core-wide package in a separate single-cycle RV32I CPU project that reuses these blocks.
