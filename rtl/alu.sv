@@ -39,7 +39,7 @@ module alu
   assign zero = (result == '0);
   assign signed_lt = ($signed(a) < $signed(b));
   assign unsigned_lt = (a < b);
-  assign lt = (alu_op == ALU_SLT) ? result[0] : signed_lt;
-  assign ltu = (alu_op == ALU_SLTU) ? result[0] : unsigned_lt;
+  assign lt = signed_lt;
+  assign ltu = unsigned_lt;
 
 endmodule
