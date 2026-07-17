@@ -82,11 +82,11 @@ Since the ALU is combinational, a single-step bounded proof checking every outpu
 Every module builds from the top-level Makefile.
 
 ```
-make MOD=alu             # run a module's testbench
-make wave MOD=alu        # run the testbench and open the waveform in Surfer
-make formal MOD=alu      # run the module's SymbiYosys proof
-./synth_stats.sh alu     # report a module's synthesis cost
-./fmax.sh alu tt_alu clk # fmax and utilization
+make MOD=alu                # run a module's testbench
+make wave MOD=alu           # run the testbench and open the waveform in Surfer
+make formal MOD=alu         # run the module's SymbiYosys proof
+./synth_stats.sh alu        # report a module's synthesis cost
+./fmax.sh alu tt_alu clk    # fmax and utilization
 ```
 
 ## Synthesis
@@ -100,7 +100,7 @@ Synthesized for the Digilent Basys 3 (Xilinx Artix-7). sv2v converts the SystemV
 
 ### Post-route timing
 
-`fmax.sh` places and routes each module in a registered-boundary harness and reports the maximum clock frequency. The frequencies come from the open nextpnr-xilinx flow, which is experimental and not vendor signed timing analysis.
+`fmax.sh` places and routes each module in a registered-boundary harness and reports the maximum clock frequency. This data relies on the experimental nextpnr-xilinx open-source toolchain, meaning frequencies are unverified and lack vendor-signed timing analysis.
 
 | Module | LUTs | Flip-flops | Block RAMs | Fmax |
 |--------|------|------------|------------|------|
