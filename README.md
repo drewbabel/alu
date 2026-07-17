@@ -86,6 +86,7 @@ make MOD=alu             # run a module's testbench
 make wave MOD=alu        # run the testbench and open the waveform in Surfer
 make formal MOD=alu      # run the module's SymbiYosys proof
 ./synth_stats.sh alu     # report a module's synthesis cost
+./fmax.sh alu tt_alu clk # fmax and utilization
 ```
 
 ## Synthesis
@@ -97,6 +98,15 @@ Synthesized for the Digilent Basys 3 (Xilinx Artix-7). sv2v converts the SystemV
 | `alu` | 493 | 0 | 22 |
 | `regfile` | 916 | 992 | 0 |
 
+### Post-route timing
+
+`fmax.sh` places and routes each module in a registered-boundary harness and reports the maximum clock frequency. The frequencies come from the open nextpnr-xilinx flow, which is experimental and not vendor signed timing analysis.
+
+| Module | LUTs | Flip-flops | Block RAMs | Fmax |
+|--------|------|------------|------------|------|
+| `alu` | 492 | 0 | 0 | 88 MHz |
+| `regfile` | 916 | 992 | 0 | 145 MHz |
+
 ### Tool versions
 
-Icarus Verilog 13.0, Yosys 0.66, sv2v 0.0.13, and Surfer.
+Icarus Verilog 13.0, Yosys 0.66, nextpnr-xilinx 0.8.2, sv2v 0.0.13, and Surfer.
