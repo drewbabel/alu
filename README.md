@@ -12,6 +12,36 @@ The ALU is verified with a self-checking testbench and an exhaustive SymbiYosys 
 
 ![Register file block diagram](docs/regfile_block.svg)
 
+## Verification
+
+| Module | Method |
+|--------|--------|
+| `alu` | Self-checking testbench and SymbiYosys formal proof |
+| `regfile` | Self-checking testbench |
+
+Since the ALU is combinational, a single-step bounded proof checking every output against a reference model is exhaustive over all operand pairs and operations, certifying `result`, `zero`, `lt`, and `ltu` for the entire input space.
+
+## Results
+
+![ALU waveform](docs/alu_waveform.svg)
+
+![Register file waveform](docs/regfile_waveform.svg)
+
+## Operations
+
+| Operation | Code | Behavior |
+|-----------|------|----------|
+| `ALU_ADD` | 0 | a + b |
+| `ALU_SUB` | 1 | a - b |
+| `ALU_SLL` | 2 | a << b[4:0] (shift left logical) |
+| `ALU_SLT` | 3 | signed a < b ? 1 : 0 |
+| `ALU_SLTU` | 4 | unsigned a < b ? 1 : 0 |
+| `ALU_XOR` | 5 | a ^ b |
+| `ALU_SRL` | 6 | a >> b[4:0] (shift right logical) |
+| `ALU_SRA` | 7 | a >>> b[4:0] (shift right arithmetic) |
+| `ALU_OR` | 8 | a \| b |
+| `ALU_AND` | 9 | a & b |
+
 ## Parameters
 
 | Parameter | Default | Description |
@@ -46,36 +76,6 @@ The ALU is verified with a self-checking testbench and an exhaustive SymbiYosys 
 | `raddr2` | in | `AWIDTH` | Read address 2 |
 | `rdata1` | out | `XLEN` | Read data 1 |
 | `rdata2` | out | `XLEN` | Read data 2 |
-
-## Operations
-
-| Operation | Code | Behavior |
-|-----------|------|----------|
-| `ALU_ADD` | 0 | a + b |
-| `ALU_SUB` | 1 | a - b |
-| `ALU_SLL` | 2 | a << b[4:0] (shift left logical) |
-| `ALU_SLT` | 3 | signed a < b ? 1 : 0 |
-| `ALU_SLTU` | 4 | unsigned a < b ? 1 : 0 |
-| `ALU_XOR` | 5 | a ^ b |
-| `ALU_SRL` | 6 | a >> b[4:0] (shift right logical) |
-| `ALU_SRA` | 7 | a >>> b[4:0] (shift right arithmetic) |
-| `ALU_OR` | 8 | a \| b |
-| `ALU_AND` | 9 | a & b |
-
-## Verification
-
-| Module | Method |
-|--------|--------|
-| `alu` | Self-checking testbench and SymbiYosys formal proof |
-| `regfile` | Self-checking testbench |
-
-Since the ALU is combinational, a single-step bounded proof checking every output against a reference model is exhaustive over all operand pairs and operations, certifying `result`, `zero`, `lt`, and `ltu` for the entire input space.
-
-## Results
-
-![ALU waveform](docs/alu_waveform.svg)
-
-![Register file waveform](docs/regfile_waveform.svg)
 
 ## Building and running
 
