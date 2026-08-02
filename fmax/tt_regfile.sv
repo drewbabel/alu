@@ -1,4 +1,3 @@
-// Regfile timing harness
 module tt_regfile (
     input  logic clk,
     input  logic rst_n,
