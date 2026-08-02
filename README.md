@@ -24,14 +24,14 @@ The ALU proof is exhaustive over every operand pair and operation, which the com
 
 ## Implementation
 
-Synthesized for the Xilinx Artix-7 XC7A35T through sv2v, Yosys, and nextpnr-xilinx.
+Synthesized for the Xilinx Artix-7 XC7A35T. Cell counts come from Yosys, and the frequencies come from AMD Vivado 2026.1 place-and-route.
 
 | Module | LUTs | Flip-flops | Fmax |
 |--------|------|------------|------|
-| `alu` | 492 | 0 | 88 MHz |
-| `regfile` | 916 | 992 | 145 MHz |
+| `alu` | 492 | 0 | 146.6 MHz |
+| `regfile` | 916 | 992 | 285.5 MHz |
 
-`fmax.sh` places and routes each module in a registered-boundary harness. The frequencies come from nextpnr-xilinx, an experimental open-source flow with no vendor-signed timing analysis.
+`fmax.sh` places and routes each module in a registered-boundary harness, and `vivado/fmax.tcl` drives the same harnesses to reproduce the frequencies above.
 
 ## Building and running
 
