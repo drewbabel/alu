@@ -6,3 +6,4 @@ build/
 
 formal/*/
 *.ron
+vivado/build/

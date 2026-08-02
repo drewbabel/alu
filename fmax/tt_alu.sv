@@ -1,4 +1,3 @@
-// ALU timing harness
 module tt_alu (
     input  logic clk,
     input  logic si,
