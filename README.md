@@ -6,7 +6,7 @@ A configurable RV32I arithmetic and logic unit and register file in SystemVerilo
 
 - Combinational add, subtract, logical, and shift operations from two operands and an operation select.
 - Zero, signed less-than, and unsigned less-than flags for the branch instructions.
-- A dual-port synchronous register file with masked write support.
+- A register file with two combinational read ports, one synchronous write port, and `x0` hardwired to zero.
 - Shared RV32I types in `alu_pkg`, reused by a separate single-cycle RV32I core.
 
 ![ALU block diagram](docs/alu_block.svg)
